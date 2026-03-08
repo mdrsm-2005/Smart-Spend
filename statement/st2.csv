@@ -1,0 +1,21 @@
+Account_Number,Account_Holder_Name,Bank_Name,IFSC_Code,Branch,Transaction_ID,Date,Time,Description,Category,Debit,Credit,Balance,Payment_Mode,Merchant,Location,Reference_Number,Status
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4001,2026-03-01,09:00,Salary Credit,Income,120,50000,49880,Bank Transfer,ABC Technologies,Hyderabad,REF983245,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4002,2026-03-01,13:15,Swiggy Lunch,Food,320,50,49610,UPI,Swiggy,Hyderabad,REF562341,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4003,2026-03-02,08:30,Metro Travel,Transport,60,10,49560,Metro Card,Hyderabad Metro,Hyderabad,REF874321,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4004,2026-03-02,18:20,Amazon Electronics Purchase,Shopping,1899,100,47761,Card,Amazon,Online,REF672134,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4005,2026-03-03,11:40,Grocery Purchase,Groceries,920,50,46891,UPI,Reliance Smart,Hyderabad,REF432765,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4006,2026-03-03,19:10,Zomato Dinner,Food,410,20,46501,UPI,Zomato,Hyderabad,REF129845,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4007,2026-03-04,10:30,Petrol Payment,Transport,1500,100,45101,Card,Indian Oil,Hyderabad,REF983456,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4008,2026-03-05,09:50,Electricity Bill Payment,Utilities,2100,150,43151,Net Banking,TSSPDCL,Hyderabad,REF563287,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4009,2026-03-05,21:05,Movie Tickets,Entertainment,450,30,42731,UPI,BookMyShow,Online,REF923871,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4010,2026-03-06,12:20,Freelance Payment,Income,80,6000,48651,Bank Transfer,Client Payment,Online,REF743219,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4011,2026-03-06,18:00,Phone Recharge,Utilities,399,20,48272,UPI,Jio,Online,REF981273,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4012,2026-03-07,08:50,Coffee Purchase,Food,180,10,48102,UPI,Starbucks,Hyderabad,REF674321,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4013,2026-03-07,14:40,Uber Ride,Transport,260,15,47857,UPI,Uber,Hyderabad,REF987123,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4014,2026-03-08,17:10,Clothing Purchase,Shopping,2200,120,45777,Card,H&M,Hyderabad,REF876432,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4015,2026-03-09,10:20,Mutual Fund SIP,Investment,3000,200,42977,Auto Debit,Groww,Online,REF234765,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4016,2026-03-09,19:50,Restaurant Dinner,Food,950,40,42067,Card,Barbeque Nation,Hyderabad,REF786432,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4017,2026-03-10,09:10,Internet Bill Payment,Utilities,799,60,41328,Net Banking,Airtel,Online,REF983764,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4018,2026-03-10,16:25,Pharmacy Purchase,Health,540,30,40818,UPI,Apollo Pharmacy,Hyderabad,REF345678,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4019,2026-03-11,13:40,Transfer from Friend,Income,70,2000,42748,UPI,Google Pay,Online,REF223344,Success
+123456789012,Sai Manaswini Mahankali,SBI,SBIN0001234,Hyderabad Main,TXN4020,2026-03-12,11:15,Bus Ticket,Transport,120,5,42633,UPI,TSRTC,Hyderabad,REF554433,Success

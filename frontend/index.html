@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackWise | AI Powered Expense Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="landing-hero">
+        <nav class="landing-nav">
+            <div class="logo">
+                <i class="fa-solid fa-chart-pie"></i> Track<span>Wise</span>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline">Log In</a>
+                <a href="register.html" class="btn btn-primary">Start for Free</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>AI Powered Expense Intelligence Platform</h1>
+                <p>Track. Analyze. Save smarter. Take full control of your finances with real-time tracking, intelligent budgeting, and actionable savings insights.</p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-primary btn-lg">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-mockup">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600" alt="Dashboard Preview" style="max-width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <section class="features-section">
+        <div class="section-header">
+            <h2>Track everything. Understand deeply.</h2>
+            <p>Everything you need to manage your personal finances like a pro.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-money-bill-wave"></i></div>
+                <h3>Expense Tracking</h3>
+                <p>Log your daily expenses effortlessly. Categorize them and add notes to keep a meticulous record of where your money goes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Advanced Analytics</h3>
+                <p>Visualize your spending habits over time with interactive charts. Spot trends and cut unnecessary costs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3>Smart Insights</h3>
+                <p>Our intelligent system analyzes your spending patterns and provides actionable suggestions to help you hit your savings goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script to redirect if already logged in -->
+    <script>
+        if (localStorage.getItem('token')) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+Date,Transaction_ID,Description,Category,Debit,Credit,Balance,Payment_Mode,Merchant
+2026-03-01,TXN2001,Salary Credit,Income,0,48000,48000,Bank Transfer,ABC Pvt Ltd
+2026-03-02,TXN2002,Swiggy Lunch,Food,240,0,47760,UPI,Swiggy
+2026-03-02,TXN2003,Metro Travel,Transport,60,0,47700,Metro Card,Hyderabad Metro
+2026-03-03,TXN2004,Amazon Electronics,Shopping,1999,0,45701,Card,Amazon
+2026-03-03,TXN2005,Grocery Store,Groceries,820,0,44881,UPI,Reliance Smart
+2026-03-04,TXN2006,Petrol Pump,Transport,1500,0,43381,Card,Indian Oil
+2026-03-05,TXN2007,Electricity Bill,Utilities,2100,0,41281,Net Banking,AP Electricity Board
+2026-03-06,TXN2008,Zomato Dinner,Food,390,0,40891,UPI,Zomato
+2026-03-06,TXN2009,Movie Tickets,Entertainment,520,0,40371,UPI,BookMyShow
+2026-03-07,TXN2010,Freelance Payment,Income,0,6000,46371,Bank Transfer,Freelance Client
+2026-03-07,TXN2011,Phone Recharge,Utilities,399,0,45972,UPI,Jio
+2026-03-08,TXN2012,Coffee Shop,Food,180,0,45792,UPI,Starbucks
+2026-03-08,TXN2013,Uber Ride,Transport,260,0,45532,UPI,Uber
+2026-03-09,TXN2014,Clothing Purchase,Shopping,2200,0,43332,Card,H&M
+2026-03-09,TXN2015,Mutual Fund SIP,Investment,3000,0,40332,Auto Debit,Groww
+2026-03-10,TXN2016,Internet Bill,Utilities,799,0,39533,Net Banking,Airtel
+2026-03-10,TXN2017,Restaurant Dinner,Food,950,0,38583,Card,Barbeque Nation
+2026-03-11,TXN2018,Pharmacy Purchase,Health,540,0,38043,UPI,Apollo Pharmacy
+2026-03-11,TXN2019,Transfer from Friend,Income,0,2000,40043,UPI,Google Pay
+2026-03-12,TXN2020,Bus Ticket,Transport,120,0,39923,UPI,TSRTC
+2026-03-12,TXN2021,Flipkart Purchase,Shopping,1450,0,38473,Card,Flipkart
+2026-03-13,TXN2022,Grocery Store,Groceries,910,0,37563,UPI,D-Mart
+2026-03-13,TXN2023,Netflix Subscription,Entertainment,649,0,36914,Card,Netflix
+2026-03-14,TXN2024,Spotify Subscription,Entertainment,119,0,36795,Card,Spotify
+2026-03-14,TXN2025,Petrol Pump,Transport,1300,0,35495,Card,Bharat Petroleum
+2026-03-15,TXN2026,Zomato Order,Food,310,0,35185,UPI,Zomato
+2026-03-16,TXN2027,Water Bill,Utilities,450,0,34735,Net Banking,Water Board
+2026-03-16,TXN2028,Investment Deposit,Investment,4000,0,30735,Net Banking,Zerodha
+2026-03-17,TXN2029,Coffee Shop,Food,200,0,30535,UPI,Cafe Coffee Day
+2026-03-17,TXN2030,Uber Ride,Transport,180,0,30355,UPI,Uber
+2026-03-18,TXN2031,Medical Checkup,Health,1200,0,29155,Card,Apollo Hospital
+2026-03-18,TXN2032,Swiggy Dinner,Food,420,0,28735,UPI,Swiggy
+2026-03-19,TXN2033,Amazon Books,Shopping,899,0,27836,Card,Amazon
+2026-03-20,TXN2034,Transfer from Parent,Income,0,5000,32836,Bank Transfer,Family

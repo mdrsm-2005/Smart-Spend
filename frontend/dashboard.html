@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartSpend - Personal Finance Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-body">
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fa-solid fa-chart-pie"></i> Smart<span>Spend</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li class="active" data-target="dashboard-tab"><i class="fa-solid fa-house"></i> Overview</li>
+            <li data-target="transactions-tab"><i class="fa-solid fa-list"></i> History</li>
+            <li data-target="goals-tab"><i class="fa-solid fa-bullseye"></i> Budgets & Goals</li>
+            <li data-target="gst-tab"><i class="fa-solid fa-file-invoice-dollar"></i> GST Tracker</li>
+            <li data-target="insights-tab"><i class="fa-solid fa-lightbulb"></i> Insights</li>
+        </ul>
+        <div class="sidebar-footer">
+            <div id="userInfo" class="user-info"></div>
+            <button id="logoutBtn" class="btn btn-outline" style="width: 100%; border:none; color: var(--danger);"><i class="fa-solid fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div id="toast-container" class="toast-container"></div>
+        
+        <header class="top-header">
+            <h2 id="pageTitle">Dashboard Overview</h2>
+            <div class="header-actions">
+                <button class="btn btn-primary" id="addExpenseBtnModal"><i class="fa-solid fa-plus"></i> Add Expense</button>
+            </div>
+        </header>
+
+        <!-- DASHBOARD TAB -->
+        <div id="dashboard-tab" class="tab-content active view-export-target">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon bg-blue"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="metric-info"><h3>Total Expenses (Month)</h3><p id="metricMonthSpent">₹0.00</p></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-teal"><i class="fa-solid fa-calendar-day"></i></div>
+                    <div class="metric-info"><h3>Avg Daily Spending</h3><p id="metricDailyAvg">₹0.00</p></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-yellow"><i class="fa-solid fa-calendar-alt"></i></div>
+                    <div class="metric-info"><h3>Avg Monthly Spending</h3><p id="metricMonthlyAvg">₹0.00</p></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-red"><i class="fa-solid fa-fire"></i></div>
+                    <div class="metric-info"><h3>Highest Category</h3><p id="metricHighestCat">-</p></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-teal"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <div class="metric-info"><h3>Potential Savings</h3><p id="metricSavings">₹0.00</p></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-blue"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="metric-info"><h3>Health Score / Prediction</h3><p id="metricHealth">0/100</p></div>
+                </div>
+            </div>
+
+            <div class="charts-grid" style="grid-template-columns: 1.5fr 1fr;">
+                <div class="chart-card wide-chart">
+                    <div class="card-header">
+                        <h3>Spending Trend (Monthly)</h3>
+                    </div>
+                    <div class="chart-container" style="position: relative; height:300px;">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Category Distribution</h3>
+                    </div>
+                    <div class="chart-container" style="position: relative; height:300px;">
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-card wide-chart" style="margin-bottom:2rem;">
+                <div class="card-header">
+                    <h3>Monthly Comparison (Top Categories)</h3>
+                </div>
+                <div class="chart-container" style="position: relative; height:300px;">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSACTIONS TAB -->
+        <div id="transactions-tab" class="tab-content">
+            <div class="card">
+                <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
+                    <h3>Transaction History</h3>
+                    <div class="filters" style="display:flex; gap:0.5rem; flex-wrap: wrap; align-items: center;">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search..." style="width: 150px;">
+                        <select id="filterCategory" class="form-control" style="width:auto;">
+                            <option value="All">All Categories</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Health">Health</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Education">Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <select id="filterDate" class="form-control" style="width:auto;">
+                            <option value="all">All Time</option>
+                            <option value="daily">Today</option>
+                            <option value="monthly">This Month</option>
+                            <option value="yearly">This Year</option>
+                        </select>
+                        <select id="sortOrder" class="form-control" style="width:auto;">
+                            <option value="latest">Latest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="highest">Highest Expense</option>
+                            <option value="lowest">Lowest Expense</option>
+                        </select>
+                        <button class="btn btn-outline" id="importBankBtn" title="Import Statement"><i class="fa-solid fa-upload"></i> Import CSV</button>
+                        <button class="btn btn-outline" id="exportCsvBtn" title="Export CSV"><i class="fa-solid fa-file-csv"></i> CSV</button>
+                        <button class="btn btn-outline" id="exportPdfBtn" title="Export PDF"><i class="fa-solid fa-file-pdf"></i> PDF</button>
+                    </div>
+                </div>
+                <div class="table-container view-export-target" id="pdfTargetTable">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Title / Description</th>
+                                <th>Notes</th>
+                                <th>Amount</th>
+                                <th class="actions-col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expensesTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- GOALS & BUDGETS TAB -->
+        <div id="goals-tab" class="tab-content">
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <div class="card">
+                    <h3>Set Smart Financial Goal</h3>
+                    <p style="color:var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Let the system calculate timelines for your targets.</p>
+                    <form id="goalForm">
+                        <div class="form-group">
+                            <label>Goal Name (e.g., Buy Laptop)</label>
+                            <input type="text" id="goalName" class="form-control" required>
+                        </div>
+                        <div class="form-group" style="display:flex; gap:1rem;">
+                            <div style="flex:1;">
+                                <label>Target Amount(₹)</label>
+                                <input type="number" id="goalAmount" class="form-control" required min="1">
+                            </div>
+                            <div style="flex:1;">
+                                <label>Monthly Saving(₹)</label>
+                                <input type="number" id="goalSaving" class="form-control" required min="1">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Goal</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h3>Set Monthly Budget Alerts</h3>
+                    <p style="color:var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Set limits to get warnings when you overspend.</p>
+                    <form id="budgetForm">
+                        <div class="form-group" style="display:flex; gap:1rem;">
+                            <div style="flex:1;">
+                                <label>Month</label>
+                                <input type="month" id="budgetMonth" class="form-control" required>
+                            </div>
+                            <div style="flex:1;">
+                                <label>Category</label>
+                                <select id="budgetCategory" class="form-control" required>
+                                    <option value="Food">Food</option>
+                                    <option value="Transport">Transport</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Bills">Bills</option>
+                                    <option value="Health">Health</option>
+                                    <option value="Entertainment">Entertainment</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Budget Limit (₹)</label>
+                            <input type="number" id="budgetAmount" class="form-control" required min="1">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Save Budget Limit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Your Goals & Progress</h3>
+                    </div>
+                    <div id="goalsContainer" class="progress-container"></div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Budget Alerts Status (<span id="currentBudgetMonthDisplay"></span>)</h3>
+                        <input type="month" id="viewBudgetMonth" class="form-control" style="width:auto; padding:0.2rem 1rem;">
+                    </div>
+                    <div id="budgetProgressContainer" class="progress-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GST TRACKER TAB -->
+        <div id="gst-tab" class="tab-content">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon bg-yellow"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div class="metric-info"><h3>Total GST Paid</h3><p id="gstTotalPaid">₹0.00</p></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-teal"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <div class="metric-info"><h3>Claimable GST</h3><p id="gstClaimable">₹0.00</p></div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-blue"><i class="fa-solid fa-shopping-cart"></i></div>
+                    <div class="metric-info"><h3>Total Purchases</h3><p id="gstTotalPurchases">₹0.00</p></div>
+                </div>
+            </div>
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
+                <div class="card">
+                    <h3>Log GST Input</h3>
+                    <p style="color:var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Save GST details for easy claims.</p>
+                    <form id="gstForm">
+                        <div class="form-group">
+                            <label>Vendor Name</label>
+                            <input type="text" id="gstVendor" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Purchase Amount (Before GST)</label>
+                            <input type="number" id="gstPurchase" class="form-control" required min="0.01" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label>GST Amount</label>
+                            <input type="number" id="gstAmount" class="form-control" required min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label>Total Paid (Auto-calculated)</label>
+                            <input type="number" id="gstTotal" class="form-control" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" id="gstDate" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Add GST Log</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>GST Expense Summary</h3>
+                    <div class="table-container" style="max-height: 400px;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Vendor</th>
+                                    <th>Base Amt</th>
+                                    <th>GST Paid</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gstTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INSIGHTS TAB -->
+        <div id="insights-tab" class="tab-content">
+            <div class="card">
+                <div class="card-header" style="flex-direction: column; align-items: flex-start;">
+                    <h3>AI Financial Insights Engine</h3>
+                    <p style="color: var(--text-muted);">Smart analysis showing predicted savings, category abnormalities, and health alerts.</p>
+                </div>
+                <div id="insightsContainer" class="insights-list">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modals -->
+    <!-- Add Expense Modal -->
+    <div class="modal-overlay" id="expenseModal">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h3>Add Expense</h3>
+                <button class="close-modal"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <form id="expenseForm">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="expTitle" class="form-control" required>
+                </div>
+                <div class="form-group" style="display:flex; gap: 1rem;">
+                    <div style="flex:1;">
+                        <label>Amount (₹)</label>
+                        <input type="number" id="expAmount" class="form-control" required min="0.01" step="0.01">
+                    </div>
+                    <div style="flex:1;">
+                        <label>Category</label>
+                        <select id="expCategory" class="form-control" required>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Health">Health</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Education">Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="expDate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Notes (Optional)</label>
+                    <input type="text" id="expNotes" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Add to Tracking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Import CSV Modal -->
+    <div class="modal-overlay" id="importModal">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h3>Import Bank Statement</h3>
+                <button class="close-modal"><i class="fa-solid fa-times"></i></button>
+            </div>
+            <div>
+                <p style="color:var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Upload a CSV file with columns: <strong>Date, Description, Amount</strong>. We will auto-categorize and save them!</p>
+                <input type="file" id="csvFileInput" accept=".csv" class="form-control" style="margin-bottom: 1rem;">
+                <button id="processCsvBtn" class="btn btn-accent" style="width: 100%;">Parse & Import Data</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

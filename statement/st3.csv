@@ -1,0 +1,16 @@
+Account_Number,Account_Holder_Name,Bank_Name,IFSC_Code,Branch,Transaction_ID,Date,Time,Description,Category,Debit,Credit,Balance,Payment_Mode,Merchant,Location,Reference_Number,Status
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5001,2026-03-01,09:10,Salary Credit,Income,150,52000,51850,Bank Transfer,TechNova Pvt Ltd,Mumbai,REF772311,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5002,2026-03-01,13:30,Lunch Order,Food,340,20,51530,UPI,Swiggy,Mumbai,REF552200,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5003,2026-03-02,08:15,Taxi Ride,Transport,260,15,51285,UPI,Uber,Mumbai,REF223411,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5004,2026-03-02,17:45,Online Shopping,Shopping,1750,120,49655,Card,Flipkart,Online,REF771234,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5005,2026-03-03,11:30,Grocery Store,Groceries,890,40,48805,UPI,Big Bazaar,Mumbai,REF991122,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5006,2026-03-03,20:05,Dinner Restaurant,Food,760,35,48080,Card,Barbeque Nation,Mumbai,REF442211,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5007,2026-03-04,10:20,Petrol Pump,Transport,1400,100,46780,Card,Bharat Petroleum,Mumbai,REF662278,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5008,2026-03-05,09:40,Electricity Bill,Utilities,2100,120,44800,Net Banking,Maharashtra Electricity Board,Mumbai,REF119900,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5009,2026-03-05,21:00,Movie Tickets,Entertainment,450,25,44375,UPI,BookMyShow,Online,REF339911,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5010,2026-03-06,12:00,Freelance Payment,Income,120,4500,48755,Bank Transfer,Freelance Client,Mumbai,REF881277,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5011,2026-03-06,18:20,Mobile Recharge,Utilities,399,20,48376,UPI,Airtel,Mumbai,REF773311,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5012,2026-03-07,08:50,Coffee Shop,Food,190,10,48196,UPI,Starbucks,Mumbai,REF234455,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5013,2026-03-07,14:40,Bus Travel,Transport,120,5,48081,UPI,BEST Bus,Mumbai,REF554321,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5014,2026-03-08,17:10,Clothing Store,Shopping,2300,140,45921,Card,Zara,Mumbai,REF661199,Success
+987654321001,Rahul Sharma,HDFC Bank,HDFC0002345,Mumbai Central,TXN5015,2026-03-09,10:10,Mutual Fund Investment,Investment,3000,200,43121,Auto Debit,Groww,Online,REF992200,Success

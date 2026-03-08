@@ -1,0 +1,21 @@
+Account_Number,Account_Holder_Name,Bank_Name,IFSC_Code,Branch,Transaction_ID,Date,Time,Description,Category,Debit,Credit,Balance,Payment_Mode,Merchant,Location,Reference_Number,Status
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4021,2026-03-13,09:15,Breakfast Cafe,Food,220,15,42428,UPI,Cafe Coffee Day,Hyderabad,REF662311,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4022,2026-03-13,12:40,Online Course Payment,Education,1800,100,40728,Card,Udemy,Online,REF772199,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4023,2026-03-13,18:10,Grocery Purchase,Groceries,760,30,39998,UPI,D-Mart,Hyderabad,REF554211,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4024,2026-03-14,08:05,Taxi Ride,Transport,340,20,39678,UPI,Ola,Hyderabad,REF991233,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4025,2026-03-14,15:20,Mobile Accessories,Shopping,890,50,38838,Card,Amazon,Online,REF228844,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4026,2026-03-15,10:00,ATM Cash Withdrawal,Cash,2000,80,36918,ATM,SBI ATM,Hyderabad,REF882211,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4027,2026-03-15,13:30,Restaurant Lunch,Food,650,40,36308,Card,Paradise Biryani,Hyderabad,REF110022,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4028,2026-03-16,09:10,Electric Scooter Ride,Transport,120,5,36193,UPI,Rapido,Hyderabad,REF662277,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4029,2026-03-16,14:45,Book Purchase,Education,540,25,35678,UPI,Flipkart,Online,REF333777,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4030,2026-03-16,20:10,Ice Cream Shop,Food,180,10,35508,UPI,Baskin Robbins,Hyderabad,REF999121,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4031,2026-03-17,08:40,Parking Fee,Transport,70,5,35443,UPI,GHMC Parking,Hyderabad,REF222991,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4032,2026-03-17,12:30,Laptop Repair,Electronics,2300,120,33263,Card,HP Service Center,Hyderabad,REF121343,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4033,2026-03-18,09:50,Milk & Dairy Purchase,Groceries,150,10,33123,UPI,Heritage Dairy,Hyderabad,REF661200,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4034,2026-03-18,17:25,Clothing Store,Shopping,1450,80,31753,Card,Zudio,Hyderabad,REF888456,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4035,2026-03-19,10:10,Water Bill Payment,Utilities,550,30,31233,Net Banking,Water Board,Hyderabad,REF662211,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4036,2026-03-19,19:45,Dinner with Friends,Food,780,40,30493,Card,Tandoori Flames,Hyderabad,REF900771,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4037,2026-03-20,09:35,Medicine Purchase,Health,430,20,30083,UPI,MedPlus,Hyderabad,REF671233,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4038,2026-03-20,13:20,Stationery Purchase,Education,240,10,29853,UPI,Local Book Store,Hyderabad,REF443311,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4039,2026-03-21,11:10,Online Subscription,Entertainment,299,20,29574,Card,Spotify,Online,REF712399,Success
+123456789012,Abhinav Kumar,SBI,SBIN0001234,Hyderabad Main,TXN4040,2026-03-21,18:40,Evening Snacks,Food,210,15,29379,UPI,Street Cafe,Hyderabad,REF332211,Success

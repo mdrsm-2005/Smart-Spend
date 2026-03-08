@@ -1,0 +1,21 @@
+Date,Transaction_ID,Description,Category,Debit,Credit,Balance,Payment_Mode,Merchant
+2026-02-01,TXN1001,Salary Credit,Income,0,45000,45000,Bank Transfer,ABC Pvt Ltd
+2026-02-02,TXN1002,Swiggy Order,Food,320,0,44680,UPI,Swiggy
+2026-02-03,TXN1003,Uber Ride,Transport,210,0,44470,UPI,Uber
+2026-02-04,TXN1004,Amazon Purchase,Shopping,1299,0,43171,Card,Amazon
+2026-02-05,TXN1005,Electricity Bill,Utilities,1800,0,41371,Net Banking,AP Electricity Board
+2026-02-06,TXN1006,Grocery Store,Groceries,950,0,40421,UPI,Reliance Smart
+2026-02-07,TXN1007,Movie Tickets,Entertainment,450,0,39971,UPI,BookMyShow
+2026-02-08,TXN1008,Freelance Payment,Income,0,5000,44971,Bank Transfer,Freelance Client
+2026-02-09,TXN1009,Zomato Order,Food,280,0,44691,UPI,Zomato
+2026-02-10,TXN1010,Petrol Pump,Transport,1200,0,43491,Card,Indian Oil
+2026-02-11,TXN1011,Phone Recharge,Utilities,399,0,43092,UPI,Jio
+2026-02-12,TXN1012,Netflix Subscription,Entertainment,649,0,42443,Card,Netflix
+2026-02-13,TXN1013,Medical Store,Health,720,0,41723,UPI,Apollo Pharmacy
+2026-02-14,TXN1014,Restaurant Dinner,Food,950,0,40773,Card,Barbeque Nation
+2026-02-15,TXN1015,Investment SIP,Investment,3000,0,37773,Auto Debit,Groww
+2026-02-16,TXN1016,Transfer from Friend,Income,0,1500,39273,UPI,Google Pay
+2026-02-17,TXN1017,Clothing Store,Shopping,2200,0,37073,Card,Zara
+2026-02-18,TXN1018,Metro Card Recharge,Transport,500,0,36573,UPI,Hyderabad Metro
+2026-02-19,TXN1019,Internet Bill,Utilities,799,0,35774,Net Banking,Airtel
+2026-02-20,TXN1020,Mutual Fund Investment,Investment,5000,0,30774,Net Banking,Zerodha
